@@ -24,9 +24,8 @@
   <!-- ============ HEADER ============ -->
   <header class="nav" id="topo">
     <div class="container nav__inner">
-      <a href="#inicio" class="brand" aria-label="Caio Magalhães, início">
+      <a href="#inicio" class="brand" aria-label="Início">
         <span class="brand__mark">CM</span>
-        <span class="brand__name">Caio Magalhães</span>
       </a>
       <nav class="nav__links" aria-label="Principal">
         <a href="#por-que">Por que ter um site</a>
@@ -351,22 +350,38 @@
     </section>
 
     <!-- ============ NICHOS ============ -->
-    <section class="section niches">
-      <div class="container">
-        <div class="section__head section__head--row reveal">
-          <div>
+    <section class="section niches" id="nichos">
+      <div class="container niches__inner">
+        <div class="niches__copy">
+          <div class="reveal">
             <span class="eyebrow">Para quem é</span>
             <h2>Feito para negócios em que <em>cada cliente novo</em> faz diferença.</h2>
+            <p class="niches__lead">Se um único cliente vale centenas ou milhares de reais para você, um site profissional se paga muito rápido.</p>
           </div>
-          <p>Se um único cliente vale centenas ou milhares de reais para você, um site profissional se paga muito rápido.</p>
+          <ol class="niches__list reveal">
+            <li><button type="button" class="niche-tab is-active" data-niche="0" aria-pressed="true"><span class="niche-tab__n">01</span><span class="niche-tab__t">Móveis planejados<small>Projetos de alto valor que começam com uma pesquisa no Google.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+            <li><button type="button" class="niche-tab" data-niche="1" aria-pressed="false"><span class="niche-tab__n">02</span><span class="niche-tab__t">Energia solar<small>O cliente compara várias empresas antes de pedir orçamento.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+            <li><button type="button" class="niche-tab" data-niche="2" aria-pressed="false"><span class="niche-tab__n">03</span><span class="niche-tab__t">Odontologia e estética<small>Pacientes escolhem quem transmite mais confiança.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+            <li><button type="button" class="niche-tab" data-niche="3" aria-pressed="false"><span class="niche-tab__n">04</span><span class="niche-tab__t">Reformas, piscinas e vidraçarias<small>Mostre suas obras e receba pedidos de orçamento.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+            <li><button type="button" class="niche-tab" data-niche="4" aria-pressed="false"><span class="niche-tab__n">05</span><span class="niche-tab__t">Escritórios e consultórios<small>Advogados, contadores, psicólogos, clínicas e afins.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+            <li><button type="button" class="niche-tab" data-niche="5" aria-pressed="false"><span class="niche-tab__n">06</span><span class="niche-tab__t">Lojas e serviços locais<small>Seja encontrado por quem está procurando no seu bairro.</small></span><svg class="i niche-tab__arrow"><use href="#i-arrow"/></svg></button></li>
+          </ol>
         </div>
-        <div class="niches__grid">
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=65&auto=format&fit=crop" alt="Cozinha planejada" loading="lazy"><figcaption>Móveis planejados</figcaption></figure>
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&q=65&auto=format&fit=crop" alt="Painéis de energia solar" loading="lazy"><figcaption>Energia solar</figcaption></figure>
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=65&auto=format&fit=crop" alt="Consultório odontológico" loading="lazy"><figcaption>Odontologia e estética</figcaption></figure>
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=65&auto=format&fit=crop" alt="Casa reformada" loading="lazy"><figcaption>Reformas, piscinas e vidraçarias</figcaption></figure>
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=65&auto=format&fit=crop" alt="Profissional sorrindo" loading="lazy"><figcaption>Escritórios e consultórios</figcaption></figure>
-          <figure class="niche reveal"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=65&auto=format&fit=crop" alt="Loja local" loading="lazy"><figcaption>Lojas e serviços locais</figcaption></figure>
+
+        <div class="niches__stage reveal">
+          <figure class="niche-slide is-active" data-q="móveis planejados perto de mim"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1000&q=70&auto=format&fit=crop" alt="Cozinha planejada" loading="lazy"></figure>
+          <figure class="niche-slide" data-q="orçamento de energia solar"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1000&q=70&auto=format&fit=crop" alt="Painéis de energia solar" loading="lazy"></figure>
+          <figure class="niche-slide" data-q="dentista perto de mim"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=70&auto=format&fit=crop" alt="Consultório odontológico" loading="lazy"></figure>
+          <figure class="niche-slide" data-q="vidraçaria perto de mim"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=70&auto=format&fit=crop" alt="Casa reformada" loading="lazy"></figure>
+          <figure class="niche-slide" data-q="advogado perto de mim"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1000&q=70&auto=format&fit=crop" alt="Profissional sorrindo" loading="lazy"></figure>
+          <figure class="niche-slide" data-q="loja perto de mim"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=70&auto=format&fit=crop" alt="Loja local" loading="lazy"></figure>
+
+          <div class="niches__search">
+            <small>Seu cliente está pesquisando agora:</small>
+            <div class="niches__query"><svg class="i"><use href="#i-search"/></svg><span id="nicheQuery">móveis planejados perto de mim</span></div>
+          </div>
+          <div class="niches__count"><b id="nicheNum">01</b> / 06</div>
+          <div class="niches__bar"><span></span></div>
         </div>
       </div>
     </section>
@@ -489,6 +504,12 @@
             <li><svg class="i"><use href="#i-bolt"/></svg> Entrega rápida, sem enrolação</li>
             <li><svg class="i"><use href="#i-heart"/></svg> Suporte depois da entrega</li>
           </ul>
+          <div class="about__actions reveal">
+            <a class="btn btn--primary btn--lg" href="https://portifolio-z8qx.vercel.app/" target="_blank" rel="noopener">
+              Ver meu portfólio <svg class="i"><use href="#i-external"/></svg>
+            </a>
+            <small>Conheça projetos que já desenvolvi</small>
+          </div>
         </div>
       </div>
     </section>
@@ -538,14 +559,42 @@
     <section class="section final">
       <div class="container">
         <div class="final__card reveal">
-          <div class="final__bg" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span></div>
-          <span class="pill pill--glass"><span class="pill__dot"></span> Orçamento grátis e sem compromisso</span>
-          <h2>Enquanto você pensa, <em>seu concorrente</em> está sendo encontrado.</h2>
-          <p>Me chame no WhatsApp, conte sobre o seu negócio e receba um orçamento acessível hoje mesmo. Em 1 a 2 dias seu site pode estar no ar.</p>
-          <a class="btn btn--wa btn--xl" data-wa="Olá, Caio! Quero colocar meu negócio na internet. Pode me passar um orçamento?" href="#">
-            <svg class="i"><use href="#i-wa"/></svg> Chamar no WhatsApp agora
-          </a>
-          <small class="final__phone">(11) 96619-7683 · resposta rápida</small>
+          <div class="final__copy">
+            <span class="pill pill--glass"><span class="pill__dot"></span> Orçamento grátis e sem compromisso</span>
+            <h2>Enquanto você pensa, <em>seu concorrente</em> está sendo encontrado.</h2>
+            <p>Me chame no WhatsApp, conte sobre o seu negócio e receba um orçamento acessível hoje mesmo. Em 1 a 2 dias seu site pode estar no ar.</p>
+            <a class="btn btn--wa btn--xl" data-wa="Olá, Caio! Quero colocar meu negócio na internet. Pode me passar um orçamento?" href="#">
+              <svg class="i"><use href="#i-wa"/></svg> Chamar no WhatsApp agora
+            </a>
+            <ul class="final__perks">
+              <li><svg class="i"><use href="#i-check"/></svg> Sem compromisso</li>
+              <li><svg class="i"><use href="#i-check"/></svg> No ar em 1 a 2 dias</li>
+              <li><svg class="i"><use href="#i-check"/></svg> (11) 96619-7683 · resposta rápida</li>
+            </ul>
+          </div>
+
+          <div class="final__visual" aria-hidden="true">
+            <div class="serp">
+              <div class="serp__bar"><svg class="i"><use href="#i-search"/></svg><span id="serpQuery">móveis planejados perto de mim</span><span class="serp__caret"></span></div>
+              <div class="serp__item serp__item--top">
+                <span class="serp__rank">1</span>
+                <div class="serp__info"><b>Seu concorrente</b><small>concorrente.com.br</small><span class="serp__stars">★★★★★ <i>4,9</i></span></div>
+                <span class="serp__tag">Site profissional</span>
+              </div>
+              <div class="serp__item">
+                <span class="serp__rank">2</span>
+                <div class="serp__info"><b>Outro concorrente</b><small>outraempresa.com.br</small><span class="serp__stars">★★★★☆ <i>4,6</i></span></div>
+              </div>
+              <div class="serp__item serp__item--you">
+                <span class="serp__rank">?</span>
+                <div class="serp__info"><b>Seu negócio</b><small>Ainda não aparece nesta busca</small></div>
+              </div>
+            </div>
+            <div class="final__toast">
+              <span class="final__toast-icon"><svg class="i"><use href="#i-wa"/></svg></span>
+              <div><b>Novo pedido de orçamento</b><small>…chegou para o seu concorrente.</small></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -553,7 +602,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#inicio" class="brand"><span class="brand__mark">CM</span><span class="brand__name">Caio Magalhães</span></a>
+      <a href="#inicio" class="brand" aria-label="Início"><span class="brand__mark">CM</span></a>
       <p>Sites e páginas de vendas para pequenos e médios negócios.</p>
       <nav class="footer__links" aria-label="Rodapé">
         <a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a><a href="#" data-wa="Olá, Caio!">WhatsApp</a>
@@ -568,7 +617,7 @@
       <a href="https://datasebrae.com.br/wp-content/uploads/2022/12/091-2022-03-Digitalizacao-nas-MPEs-v3-1.pdf" target="_blank" rel="noopener">Sebrae, Digitalização nas MPEs (2022)</a>
     </div>
     <div class="container footer__bottom">
-      <small>© <span id="year">2026</span> Caio Magalhães. Todos os direitos reservados.</small>
+      <small>© <span id="year">2026</span>. Todos os direitos reservados.</small>
       <a href="#topo" class="footer__top">Voltar ao topo ↑</a>
     </div>
   </footer>
@@ -586,6 +635,9 @@
       <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
       <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
       <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
       <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
       <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>

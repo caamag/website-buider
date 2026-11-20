@@ -221,6 +221,79 @@
     }, 6000);
   }
 
+  /* ---------- Typing effect helper ---------- */
+  const typers = new WeakMap();
+  const typeInto = (el, text) => {
+    if (!el) return;
+    const token = {};
+    typers.set(el, token);
+    if (reduceMotion) { el.textContent = text; return; }
+    let cur = el.textContent;
+    const step = () => {
+      if (typers.get(el) !== token) return;
+      if (!text.startsWith(cur)) { cur = cur.slice(0, -1); el.textContent = cur; setTimeout(step, 18); return; }
+      if (cur.length < text.length) { cur = text.slice(0, cur.length + 1); el.textContent = cur; setTimeout(step, 45); }
+    };
+    step();
+  };
+
+  const whenVisible = (el, onChange) => {
+    if (!el || !("IntersectionObserver" in window)) { onChange(true); return; }
+    new IntersectionObserver(([e]) => onChange(e.isIntersecting), { threshold: 0.25 }).observe(el);
+  };
+
+  /* ---------- Nichos: explorador interativo ---------- */
+  const nicheRoot = $(".niches__inner");
+  if (nicheRoot) {
+    const tabs = $$(".niche-tab", nicheRoot);
+    const slides = $$(".niche-slide", nicheRoot);
+    const query = $("#nicheQuery");
+    const num = $("#nicheNum");
+    const bar = $(".niches__bar span", nicheRoot);
+    const DUR = 5000;
+    let idx = 0, timer = null, auto = !reduceMotion, visible = false;
+
+    const runBar = () => {
+      if (!bar) return;
+      bar.classList.remove("is-running");
+      void bar.offsetWidth;
+      if (auto && visible) { bar.style.setProperty("--dur", `${DUR}ms`); bar.classList.add("is-running"); }
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      if (auto && visible) timer = setTimeout(() => setActive((idx + 1) % tabs.length), DUR);
+      runBar();
+    };
+    const setActive = (i) => {
+      idx = i;
+      tabs.forEach((t, n) => { t.classList.toggle("is-active", n === i); t.setAttribute("aria-pressed", String(n === i)); });
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === i));
+      if (num) num.textContent = String(i + 1).padStart(2, "0");
+      typeInto(query, slides[i]?.dataset.q || "");
+      schedule();
+    };
+    const stopAuto = () => { auto = false; clearTimeout(timer); runBar(); };
+
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => { stopAuto(); setActive(i); });
+      t.addEventListener("mouseenter", () => {
+        if (window.matchMedia("(hover: hover)").matches) { stopAuto(); if (i !== idx) setActive(i); }
+      });
+    });
+    whenVisible(nicheRoot, (v) => { visible = v; schedule(); });
+  }
+
+  /* ---------- CTA final: busca simulada ---------- */
+  const serpQuery = $("#serpQuery");
+  if (serpQuery && !reduceMotion) {
+    const queries = ["móveis planejados perto de mim", "energia solar na minha cidade", "dentista perto de mim", "vidraçaria perto de mim", "advogado perto de mim"];
+    let qi = 0, qTimer = null;
+    whenVisible(serpQuery.closest(".final__card"), (v) => {
+      clearInterval(qTimer);
+      if (v) qTimer = setInterval(() => { qi = (qi + 1) % queries.length; typeInto(serpQuery, queries[qi]); }, 3600);
+    });
+  }
+
   /* ---------- Footer year ---------- */
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
