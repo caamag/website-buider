@@ -101,7 +101,7 @@
   /* ---------- Hero: phone tilt ---------- */
   const tiltWrap = $("[data-tilt]");
   const phone = $(".phone");
-  if (tiltWrap && phone && !reduceMotion && matchMedia("(hover: hover)").matches) {
+  if (tiltWrap && phone && matchMedia("(hover: hover)").matches) {
     tiltWrap.addEventListener("pointermove", (e) => {
       const r = tiltWrap.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
